@@ -84,3 +84,14 @@ add_action('admin_notices', function () {
         echo '</p></div>';
     }
 });
+
+// Updater
+if (is_admin()) {
+    require_once YTAA_PLUGIN_DIR . 'includes/Updater.php';
+    new \YOOtheme\AdvancedAudio\Updater(
+        'yootheme-advanced-audio',
+        YTAA_VERSION,
+        'unmediacode',
+        'yootheme-advanced-audio'
+    );
+}
