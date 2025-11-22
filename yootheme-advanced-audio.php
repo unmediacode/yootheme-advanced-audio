@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: YOOtheme Advanced Audio Player
- * Plugin URI: https://example.com
- * Description: Professional audio player for YOOtheme Pro with Howler.js, multiple layouts, and dynamic content support.
+ * Plugin URI: https://github.com/unmediacode/yootheme-advanced-audio
+ * Description: Professional audio player for YOOtheme Pro with Howler.js, multiple layouts, and dynamic content support. Developed by Miguel Taboada.
  * Version: 1.0.0
- * Author: Your Name
- * Author URI: https://example.com
+ * Author: Miguel Taboada
+ * Author URI: https://github.com/unmediacode
  * License: GPL v2 or later
  * Text Domain: yootheme-advanced-audio
  */
