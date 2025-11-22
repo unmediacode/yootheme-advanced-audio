@@ -3,7 +3,7 @@
  * Plugin Name: YOOtheme Advanced Audio Player
  * Plugin URI: https://github.com/unmediacode/yootheme-advanced-audio
  * Description: Professional audio player for YOOtheme Pro with Howler.js, multiple layouts, and dynamic content support. Developed by Miguel Taboada.
- * Version: 1.0.3
+ * Version: 1.0.0
  * Author: Miguel Taboada
  * Author URI: https://github.com/unmediacode
  * License: GPL v2 or later
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define constants
-define('YTAA_VERSION', '1.0.3');
+define('YTAA_VERSION', '1.0.0');
 define('YTAA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('YTAA_PLUGIN_URL', plugin_dir_url(__FILE__));
 
