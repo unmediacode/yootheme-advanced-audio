@@ -18,3 +18,5 @@ composer.lock
 
 # WordPress
 .svn/
+debug_log.txt
+debug_updater.php
