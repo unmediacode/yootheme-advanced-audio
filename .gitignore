@@ -1,0 +1,20 @@
+# OS specific
+.DS_Store
+.Thumbs.db
+
+# IDE specific
+.idea/
+.vscode/
+*.swp
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Composer
+vendor/
+composer.lock
+
+# WordPress
+.svn/

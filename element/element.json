@@ -1,0 +1,257 @@
+{
+    "@import": "./element.php",
+    "name": "advanced_audio_player",
+    "title": "Advanced Audio Player",
+    "icon": "${url:images/icon.svg}",
+    "iconSmall": "${url:images/iconSmall.svg}",
+    "group": "basic",
+    "element": true,
+    "container": true,
+    "width": 500,
+    "defaults": {
+        "layout": "simple",
+        "primary_color": "#1e87f0",
+        "autoplay": false,
+        "loop": false,
+        "shuffle": false,
+        "show_cover": true,
+        "show_progress": true,
+        "show_volume": true,
+        "show_download": false,
+        "show_speed": false,
+        "show_external_link": true
+    },
+    "placeholder": {
+        "children": [
+            {
+                "type": "advanced_audio_track",
+                "props": {
+                    "title": "Track Title",
+                    "artist": "Artist Name"
+                }
+            }
+        ]
+    },
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+        "tracks": {
+            "label": "Tracks",
+            "type": "content-items",
+            "item": "advanced_audio_track",
+            "description": "Add audio tracks manually or map to dynamic content.",
+            "source": true
+        },
+        "album_title": {
+            "label": "Album/Playlist Title",
+            "type": "text",
+            "source": true,
+            "enable": "layout == 'apple'"
+        },
+        "album_artist": {
+            "label": "Album Artist",
+            "type": "text",
+            "source": true,
+            "enable": "layout == 'apple'"
+        },
+        "album_cover": {
+            "label": "Album Cover",
+            "type": "image",
+            "source": true,
+            "enable": "layout == 'apple'"
+        },
+        "album_description": {
+            "label": "Description",
+            "type": "textarea",
+            "source": true,
+            "enable": "layout == 'apple'"
+        },
+        "layout": {
+            "label": "Layout",
+            "type": "select",
+            "options": {
+                "Simple Card": "simple",
+                "Standard Playlist": "playlist",
+                "Apple Style": "apple",
+                "Mini Player": "mini",
+                "Sticky Footer": "sticky"
+            },
+            "default": "simple",
+            "source": true
+        },
+        "primary_color": {
+            "label": "Primary Color",
+            "type": "color",
+            "description": "Main accent color for the player.",
+            "source": true
+        },
+        "autoplay": {
+            "label": "Autoplay",
+            "type": "checkbox",
+            "text": "Enable Autoplay",
+            "source": true
+        },
+        "loop": {
+            "label": "Loop",
+            "type": "checkbox",
+            "text": "Loop Playlist",
+            "source": true
+        },
+        "shuffle": {
+            "label": "Shuffle",
+            "type": "checkbox",
+            "text": "Shuffle Tracks",
+            "source": true
+        },
+        "show_cover": {
+            "label": "Show Cover",
+            "type": "checkbox",
+            "text": "Show Album Art",
+            "default": true,
+            "source": true
+        },
+        "cover_size": {
+            "label": "Cover Size",
+            "type": "select",
+            "options": {
+                "Small (80px)": "small",
+                "Medium (150px)": "medium",
+                "Large (250px)": "large"
+            },
+            "default": "small",
+            "enable": "show_cover",
+            "source": true
+        },
+        "show_progress": {
+            "label": "Show Progress Bar",
+            "type": "checkbox",
+            "text": "Show Progress Bar",
+            "default": true,
+            "source": true
+        },
+        "show_volume": {
+            "label": "Show Volume",
+            "type": "checkbox",
+            "text": "Show Volume Control",
+            "default": true,
+            "source": true
+        },
+        "show_waveform": {
+            "label": "Waveform",
+            "type": "checkbox",
+            "text": "Show Waveform",
+            "default": true,
+            "source": true
+        },
+        "show_download": {
+            "label": "Show Download",
+            "type": "checkbox",
+            "text": "Show Download Button",
+            "default": false,
+            "source": true
+        },
+        "show_speed": {
+            "label": "Playback Speed",
+            "type": "checkbox",
+            "text": "Show Speed Control",
+            "default": false,
+            "source": true
+        },
+        "show_external_link": {
+            "label": "External Link",
+            "type": "checkbox",
+            "text": "Show External Link Button",
+            "default": true,
+            "source": true
+        },
+        "show_platform_links": {
+            "label": "Platform Links",
+            "type": "checkbox",
+            "text": "Show Apple/Amazon/Spotify",
+            "default": true,
+            "source": true
+        },
+        "position": "${builder.position}",
+        "position_left": "${builder.position_left}",
+        "position_right": "${builder.position_right}",
+        "position_top": "${builder.position_top}",
+        "position_bottom": "${builder.position_bottom}",
+        "position_z_index": "${builder.position_z_index}",
+        "margin": "${builder.margin}",
+        "margin_remove_top": "${builder.margin_remove_top}",
+        "margin_remove_bottom": "${builder.margin_remove_bottom}",
+        "maxwidth": "${builder.maxwidth}",
+        "maxwidth_breakpoint": "${builder.maxwidth_breakpoint}",
+        "block_align": "${builder.block_align}",
+        "block_align_breakpoint": "${builder.block_align_breakpoint}",
+        "block_align_fallback": "${builder.block_align_fallback}",
+        "text_align": "${builder.text_align}",
+        "text_align_breakpoint": "${builder.text_align_breakpoint}",
+        "text_align_fallback": "${builder.text_align_fallback}",
+        "animation": "${builder.animation}",
+        "_parallax_button": "${builder._parallax_button}",
+        "visibility": "${builder.visibility}",
+        "name": "${builder.name}",
+        "status": "${builder.status}",
+        "source": "${builder.source}",
+        "id": "${builder.id}",
+        "class": "${builder.cls}",
+        "attributes": "${builder.attrs}",
+        "css": {
+            "label": "CSS",
+            "description": "Enter your own custom CSS. The following selectors will be prefixed automatically for this element: <code>.el-element</code>, <code>.el-item</code>, <code>.el-content</code>",
+            "type": "editor",
+            "editor": "code",
+            "mode": "css",
+            "attrs": {
+                "debounce": 500,
+                "hints": [".el-element", ".el-item", ".el-content"]
+            }
+        },
+        "transform": "${builder.transform}"
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Content",
+                    "fields": [
+                        "tracks",
+                        "album_title",
+                        "album_artist",
+                        "album_cover",
+                        "album_description"
+                    ]
+                },
+                {
+                    "title": "Settings",
+                    "fields": [
+                        "layout",
+                        "primary_color",
+                        "show_cover",
+                        "cover_size",
+                        "show_progress",
+                        "show_waveform",
+                        "show_volume",
+                        "show_download",
+                        "show_speed",
+                        "show_external_link",
+                        "show_platform_links"
+                    ]
+                },
+                {
+                    "title": "Behavior",
+                    "fields": [
+                        "autoplay",
+                        "loop",
+                        "shuffle"
+                    ]
+                },
+                "${builder.advanced}"
+            ]
+        }
+    }
+}

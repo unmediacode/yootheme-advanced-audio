@@ -1,0 +1,654 @@
+/* YOOtheme Advanced Audio Player Styles */
+
+.ytaa-player {
+    --ytaa-primary-color: #1e87f0;
+    --ytaa-bg-color: #ffffff;
+    --ytaa-text-color: #333333;
+    --ytaa-muted-color: #999999;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.ytaa-main-interface.uk-card {
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ytaa-main-interface.uk-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Progress Bar */
+.ytaa-progress-container {
+    width: 100%;
+    padding: 5px 0;
+}
+
+.ytaa-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.2s ease;
+}
+
+.ytaa-progress-bar:hover {
+    height: 8px;
+}
+
+.ytaa-progress-fill {
+    height: 100%;
+    background: var(--ytaa-primary-color);
+    width: 0%;
+    transition: width 0.1s linear;
+    border-radius: 10px;
+    position: relative;
+}
+
+.ytaa-progress-fill::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0 10px 10px 0;
+}
+
+/* Cover Art */
+.ytaa-cover-art {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.ytaa-cover-art.ytaa-cover-small { width: 80px; height: 80px; }
+.ytaa-cover-art.ytaa-cover-medium { width: 150px; height: 150px; }
+.ytaa-cover-art.ytaa-cover-large { width: 250px; height: 250px; }
+
+/* Simple Layout Sizes */
+.ytaa-simple-interface {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ytaa-simple-interface.ytaa-cover-small { width: 150px; }
+.ytaa-simple-interface.ytaa-cover-medium { width: 250px; }
+.ytaa-simple-interface.ytaa-cover-large { width: 350px; }
+
+.ytaa-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    transition: transform 0.5s ease;
+}
+
+.ytaa-player.playing .ytaa-cover-img {
+    transform: scale(1.1);
+}
+
+.ytaa-cover-placeholder {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f8f8f8;
+}
+
+/* Controls */
+.ytaa-btn-play {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    /* Glassmorphism - Default (Light/Standard View) */
+    background: rgba(0, 0, 0, 0.04) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    color: var(--ytaa-primary-color) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.ytaa-btn-play:hover {
+    transform: scale(1.1);
+    background: rgba(var(--ytaa-primary-color), 0.1) !important;
+    box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.1);
+    color: var(--ytaa-primary-color) !important;
+}
+
+.ytaa-btn-play:active {
+    transform: scale(0.95);
+}
+
+/* Adjust icon size inside button */
+.ytaa-btn-play svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Simple Layout specifics (Dark Context) */
+.ytaa-layout-simple .ytaa-btn-play {
+    background: rgba(0, 0, 0, 0.4) !important; /* Darker glass */
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    /* Bottom Right Positioning */
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    margin: 0;
+    z-index: 10;
+}
+
+/* Proportional Sizes for Simple Layout */
+/* Small (150px) */
+.ytaa-layout-simple.ytaa-cover-small .ytaa-btn-play {
+    width: 40px;
+    height: 40px;
+}
+.ytaa-layout-simple.ytaa-cover-small .ytaa-btn-play svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Medium (250px) */
+.ytaa-layout-simple.ytaa-cover-medium .ytaa-btn-play {
+    width: 60px;
+    height: 60px;
+}
+.ytaa-layout-simple.ytaa-cover-medium .ytaa-btn-play svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Large (350px) */
+.ytaa-layout-simple.ytaa-cover-large .ytaa-btn-play {
+    width: 80px;
+    height: 80px;
+}
+.ytaa-layout-simple.ytaa-cover-large .ytaa-btn-play svg {
+    width: 32px;
+    height: 32px;
+}
+
+.ytaa-layout-simple .ytaa-btn-play:hover {
+    background: rgba(0, 0, 0, 0.6) !important;
+    transform: scale(1.1);
+}
+
+/* Mini Layout specifics (Solid Primary) */
+.ytaa-layout-mini .ytaa-btn-play {
+    width: 36px;
+    height: 36px;
+    box-shadow: none;
+    background: var(--ytaa-primary-color) !important;
+    border: none !important;
+    color: #ffffff !important;
+}
+
+.ytaa-layout-mini .ytaa-btn-play svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Revert controls for Mini */
+.ytaa-layout-mini .ytaa-btn-prev,
+.ytaa-layout-mini .ytaa-btn-next {
+    display: flex; /* Restore prev/next */
+}
+
+.ytaa-btn-prev,
+.ytaa-btn-next {
+    color: var(--ytaa-text-color);
+    transition: all 0.2s ease;
+    opacity: 0.7;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ytaa-btn-prev:hover,
+.ytaa-btn-next:hover {
+    transform: scale(1.15);
+    opacity: 1;
+    color: var(--ytaa-primary-color);
+}
+
+/* Extra Controls */
+.ytaa-btn-speed {
+    font-weight: bold;
+    font-size: 0.8rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 0 8px;
+    line-height: 24px;
+    height: 26px;
+    color: var(--ytaa-text-color);
+    transition: all 0.2s ease;
+}
+
+.ytaa-btn-link:hover {
+    background: rgba(var(--ytaa-primary-color), 0.1);
+    color: var(--ytaa-primary-color);
+    transform: translateY(-2px);
+}
+
+.ytaa-btn-spotify:hover { color: #1DB954 !important; background: rgba(29, 185, 84, 0.1) !important; transform: translateY(-2px); }
+.ytaa-btn-apple:hover { color: #FA243C !important; background: rgba(250, 36, 60, 0.1) !important; transform: translateY(-2px); }
+.ytaa-btn-amazon:hover { color: #FF9900 !important; background: rgba(255, 153, 0, 0.1) !important; transform: translateY(-2px); }
+
+.ytaa-btn-speed:hover {
+    background: rgba(0,0,0,0.05);
+    color: var(--ytaa-primary-color);
+    border-color: var(--ytaa-primary-color);
+}
+
+.ytaa-extra-controls .uk-icon-button {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid transparent;
+    color: var(--ytaa-muted-color);
+}
+
+.ytaa-extra-controls .uk-icon-button:hover {
+    color: var(--ytaa-primary-color);
+    background: rgba(0,0,0,0.03);
+}
+
+/* Simple Layout Extras */
+.ytaa-simple-extras {
+    z-index: 5;
+}
+
+.ytaa-simple-extras .uk-icon-button {
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    backdrop-filter: blur(4px);
+    border: none;
+}
+
+.ytaa-simple-extras .uk-icon-button:hover {
+    background: rgba(0,0,0,0.5);
+    transform: scale(1.1);
+}
+
+.ytaa-simple-extras .ytaa-btn-speed {
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    border: none;
+    backdrop-filter: blur(4px);
+}
+
+.ytaa-simple-extras .ytaa-btn-speed:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+/* Typography */
+.ytaa-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--ytaa-text-color);
+    margin-bottom: 4px;
+}
+
+.ytaa-artist {
+    font-size: 0.9rem;
+    color: var(--ytaa-muted-color);
+}
+
+/* Volume Control */
+.ytaa-volume-slider {
+    width: 80px;
+    cursor: pointer;
+    accent-color: var(--ytaa-primary-color);
+}
+
+/* Playlist */
+.ytaa-playlist {
+    background: transparent; /* Transparent to blend with card */
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+.ytaa-playlist ul {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Flat Playlist Items */
+.ytaa-playlist ul li {
+    padding: 12px 10px;
+    border-radius: 0;
+    transition: background 0.2s ease;
+    list-style: none;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.ytaa-playlist ul li:last-child {
+    border-bottom: none;
+}
+
+.ytaa-playlist ul li:hover {
+    background: rgba(0, 0, 0, 0.03);
+    transform: none; /* No movement */
+}
+
+.ytaa-playlist ul li.uk-active {
+    background: #f8f8f8; /* Fallback neutral */
+    border-left: 3px solid var(--ytaa-primary-color);
+    padding-left: 7px; /* Adjust for border width difference to keep text aligned if needed */
+}
+
+/* If we want a tinted background, we'd need to convert HEX to RGB in JS or use opacity */
+/* For now, clean flat look with border indicator is good */
+
+.ytaa-playlist ul li.uk-active strong {
+    color: var(--ytaa-primary-color);
+}
+
+/* Sticky Footer Layout */
+.ytaa-layout-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+}
+
+.ytaa-layout-sticky .ytaa-main-interface {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+/* Mini Floating Layout */
+.ytaa-layout-mini {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 9995;
+    margin: 0 !important;
+}
+
+.ytaa-layout-mini .ytaa-main-interface {
+    padding: 10px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.ytaa-layout-mini .ytaa-cover-art {
+    border-radius: 6px;
+}
+
+.ytaa-layout-mini.ytaa-cover-medium { width: 400px; }
+.ytaa-layout-mini.ytaa-cover-large { width: 500px; }
+
+.ytaa-layout-mini .ytaa-title {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+.ytaa-layout-mini .ytaa-artist {
+    font-size: 0.75rem;
+}
+
+.ytaa-layout-mini .ytaa-btn-play {
+    width: 36px;
+    height: 36px;
+    box-shadow: none;
+    background: var(--ytaa-primary-color) !important; /* Solid color for visibility in small size */
+    border: none !important;
+    color: #ffffff !important;
+}
+
+.ytaa-layout-mini .ytaa-btn-play:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.ytaa-layout-mini .ytaa-btn-play svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Hide extra elements for compact view */
+.ytaa-layout-mini .ytaa-progress-container,
+.ytaa-layout-mini .ytaa-volume-control {
+    display: none;
+}
+
+.ytaa-layout-mini .ytaa-controls {
+    justify-content: flex-end;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .ytaa-cover-art {
+        width: 60px;
+        height: 60px;
+    }
+
+    .ytaa-volume-control {
+        display: none !important;
+    }
+}
+
+/* Apple Style Layout */
+.ytaa-apple-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding-bottom: 100px; /* Space for mini player */
+}
+
+.ytaa-apple-header h1 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.ytaa-btn-play-all {
+    background: #fa233b !important;
+    color: white !important;
+    border: none !important;
+    padding: 0 30px !important;
+    height: 45px !important;
+    line-height: 44px !important;
+    font-size: 15px !important;
+    text-transform: none !important;
+}
+
+.ytaa-btn-play-all:hover {
+    background: #d61e32 !important;
+}
+
+/* Apple Style Layout specific playlist */
+.ytaa-layout-apple .ytaa-playlist ul {
+    max-height: none !important;
+    overflow-y: visible !important;
+}
+
+.ytaa-layout-apple .ytaa-playlist ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-radius: 12px;
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.ytaa-layout-apple .ytaa-playlist ul li:hover {
+    background: rgba(0,0,0,0.03);
+}
+
+/* Active State */
+.ytaa-layout-apple .ytaa-playlist ul li.uk-active {
+    background: #fa233b !important; /* Apple Red */
+    color: white !important;
+    border-bottom: none;
+    box-shadow: 0 4px 15px rgba(250, 35, 59, 0.3);
+}
+
+.ytaa-layout-apple .ytaa-playlist ul li.uk-active .ytaa-track-title,
+.ytaa-layout-apple .ytaa-playlist ul li.uk-active .ytaa-track-num,
+.ytaa-layout-apple .ytaa-playlist ul li.uk-active .ytaa-track-duration,
+.ytaa-layout-apple .ytaa-playlist ul li.uk-active .uk-icon {
+    color: white !important;
+}
+
+.ytaa-layout-apple .ytaa-track-num {
+    width: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    font-weight: 500;
+}
+
+.ytaa-layout-apple .ytaa-track-play-icon {
+    display: none;
+    width: 30px;
+    text-align: center;
+}
+
+.ytaa-layout-apple .ytaa-playlist ul li.uk-active .ytaa-track-num {
+    display: none;
+}
+
+.ytaa-layout-apple .ytaa-playlist ul li.uk-active .ytaa-track-play-icon {
+    display: block;
+}
+
+.ytaa-layout-apple .ytaa-track-title {
+    font-weight: 600;
+    font-size: 16px;
+    flex: 1;
+    padding: 0 15px;
+}
+
+.ytaa-layout-apple .ytaa-track-duration {
+    font-size: 14px;
+    color: #999;
+    min-width: 40px;
+    text-align: right;
+}
+
+.ytaa-layout-apple .ytaa-track-menu {
+    margin-left: 20px;
+    color: #ccc;
+    opacity: 0; /* Hide menu by default like reference? Or show on hover? */
+    transition: opacity 0.2s;
+}
+
+.ytaa-layout-apple .ytaa-playlist ul li:hover .ytaa-track-menu,
+.ytaa-layout-apple .ytaa-playlist ul li.uk-active .ytaa-track-menu {
+    opacity: 1;
+    color: inherit;
+}
+
+/* Hide the old artist text in apple list if we want to match reference strictly */
+.ytaa-layout-apple .ytaa-track-artist {
+    display: none;
+}
+
+/* Floating Mini Player */
+.ytaa-mini-player {
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    border-radius: 16px !important; /* More rounded */
+    padding: 12px 20px !important;
+}
+
+/* Progress bar at bottom of mini player */
+.ytaa-mini-player .ytaa-progress-container {
+    display: block !important; /* Show it */
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 3px;
+    padding: 0;
+    width: auto;
+}
+
+.ytaa-mini-player .ytaa-progress-bar {
+    height: 3px;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.1);
+}
+
+.ytaa-mini-player .ytaa-progress-fill {
+    border-radius: 3px;
+    background: #333; /* Dark progress for Apple style */
+}
+
+.ytaa-mini-player .ytaa-progress-fill::after {
+    display: none; /* No handle */
+}
+
+.ytaa-mini-player .ytaa-current-time,
+.ytaa-mini-player .ytaa-duration {
+    display: none; /* Hide time text in mini player */
+}
+
+.ytaa-mini-player .ytaa-title {
+    color: #111;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.ytaa-mini-player .ytaa-artist {
+    color: #555;
+    font-size: 12px;
+}
+
+/* Dark mode support for mini player */
+.uk-light .ytaa-mini-player,
+.uk-section-secondary .ytaa-mini-player {
+    background: rgba(30, 30, 30, 0.75) !important;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.uk-light .ytaa-mini-player .ytaa-title { color: #fff; }
+.uk-light .ytaa-mini-player .ytaa-artist { color: #bbb; }
+.uk-light .ytaa-mini-player .ytaa-progress-fill { background: #fff; }

@@ -1,0 +1,83 @@
+{
+    "name": "advanced_audio_track",
+    "title": "Audio Track",
+    "width": 500,
+    "source": true,
+    "fields": {
+        "title": {
+            "label": "Track Title",
+            "type": "text",
+            "source": true
+        },
+        "artist": {
+            "label": "Artist",
+            "type": "text",
+            "source": true
+        },
+        "audio_src": {
+            "label": "Audio File",
+            "type": "link",
+            "description": "Select audio file or enter URL",
+            "source": true
+        },
+        "cover_image": {
+            "label": "Cover Image",
+            "type": "image",
+            "source": true
+        },
+        "duration": {
+            "label": "Duration",
+            "type": "text",
+            "description": "Optional (e.g., 3:45)",
+            "source": true
+        },
+        "external_link": {
+            "label": "External Link",
+            "type": "link",
+            "description": "Link to Spotify, Apple Music, or Buy page",
+            "source": true
+        },
+        "external_link_label": {
+            "label": "Link Label",
+            "type": "text",
+            "placeholder": "Buy / Stream",
+            "source": true,
+            "enable": "external_link"
+        },
+        "link_apple": {
+            "label": "Apple Music",
+            "type": "link",
+            "source": true
+        },
+        "link_amazon": {
+            "label": "Amazon Music",
+            "type": "link",
+            "source": true
+        },
+        "link_spotify": {
+            "label": "Spotify",
+            "type": "link",
+            "source": true
+        },
+        "status": "${builder.statusItem}",
+        "source": "${builder.source}"
+    },
+    "fieldset": {
+        "default": {
+            "fields": [
+                "title",
+                "artist",
+                "audio_src",
+                "cover_image",
+                "duration",
+                "link_apple",
+                "link_amazon",
+                "link_spotify",
+                "external_link",
+                "external_link_label",
+                "status",
+                "source"
+            ]
+        }
+    }
+}
